@@ -1,0 +1,13 @@
+<div class="page_container">
+  <h1>Create User</h1>
+  <form action='/create_user' method ="POST">
+    <input type="text" name="user[username]" placeholder="username" required><br><br>
+    <input type="email" name="user[email]" placeholder="email" required><br><br>
+    <input type="password" name="user[password]" placeholder="password" required><br><br>
+    <input type="password" name="user[password_confirmation]" placeholder="password (confirm)" required><br><br>
+    <input type="submit" value="Create User">
+  </form>
+  <% if @error%>
+    <p id="error"><%= @error %></p>
+  <% end %>
+</div>

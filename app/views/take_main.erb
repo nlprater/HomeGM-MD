@@ -1,0 +1,16 @@
+<div class="page_container">
+  <form name="" action="" method ="POST"> 
+  <% @main.each do |main| %>
+    <p class="">Main: <%=  %></p><br>   
+    <% main.main_property.each do |property| %>    
+      <input class="" type="" name="" value=""> 
+      <%=  %>
+      <br>     
+    <% end %>
+  <% end %>
+  <br>
+  <input type="submit" value="Submit Main">
+  </form>
+</div>
+
+

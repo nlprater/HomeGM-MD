@@ -1,0 +1,47 @@
+
+<div id='profile'>
+  <h1><%=current_user.username.capitalize%>'s Profile </h1>
+  <% if Photo.find_by_user_id(current_user.id) != nil %>
+    <img src="<%=Photo.find_by_user_id(current_user.id).file %>"> 
+  <% end %>
+  <h3><%=current_user.email%></h3>
+  <h3>Account Created: <%=((Time.now - current_user.created_at) / 86400).floor%> days ago</h3>
+
+
+
+<TABLE id="user_completed">
+  <tr>
+  <th>Completed Surveys</th>
+  <tbody class = "comment">
+    <% @completed_surveys.each do |survey| %>
+      <tr>
+        <td><a href="/review-survey/<%=survey.id %>"><%=survey.name %></a>
+      </tr>
+    <% end %>
+  </tbody>
+</TABLE>
+
+
+
+<TABLE id='user_created'>
+  <tr>
+    <th>Created Surveys</th>
+  <tbody class = "comment">
+    <% @created_surveys.each do |survey| %>
+      <tr>
+        <td><a href="/stats/for/<%=survey.id %>"><%=survey.name %></a>
+      </tr>
+    <% end %>
+  </tbody>
+</TABLE>
+
+<br><br>
+<% if Photo.find_by_user_id(current_user.id) == nil %>
+  <form action='/upload' method='POST' enctype="multipart/form-data">
+    <input type='file' name='image' required >
+    <input type='submit' value='upload'>
+  </form>
+<% end %>
+
+
+</div>

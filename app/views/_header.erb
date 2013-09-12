@@ -1,0 +1,22 @@
+	<a class="app_name" href="/">App Name</a>
+<ul>  
+    <% if logged_in? %>
+    <li><a class="options" href="#">Create Main</a>
+      <div class='dropdown'>
+        <ul class="submenu">
+          <li><a  href="/create_main">Choice 1</a></li>
+          <li><a  href="/create_main">Choice 2</a></li>
+          <li><a  href="/create_main">Choice 3</a></li>
+        </ul>
+      </div>  
+    </li>-main
+    <li><a href="/all_mains">Take Main</a></li>
+    <li><a href="/logout">Logout</a></li>
+    <li><a href="/user/profile"><%=current_user.username %></a></li>
+	  <% else %>
+	    <li><a href="/all_mains">All Mains</a></li>
+	    <li><a href="/login">Login</a></li>
+	    <li><a  href="/create_user">Register</a></li>
+	  <% end %>
+</ul>
+
