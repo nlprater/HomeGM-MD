@@ -30,22 +30,22 @@ end
 
 #primary object 
 
-get '/all_mains' do
+get '/drafts' do
   #@all_mains = Main.all
-  erb :all_mains
+  erb :drafts
 end
 
 #create dynamic form
 
-get '/create_main' do 
-  erb :create_main
+get '/create_draft' do 
+  erb :create_draft
 end
 
 # display dynamic form for user input
 
-get '/take_main/:main_id' do
-  @main_id = params[:main_id]
-  erb :take_main
+get '/perform_draft/:draft_id' do
+  @draft_id = params[:draft_id]
+  erb :perform_draft
 end
 
 
@@ -81,16 +81,16 @@ end
 
 #create new "main" in the database
 
-post '/create_main' do 
+post '/create_draft' do 
   #
 end
 
 #user submit 'main'
 
-post '/take_main/:main_id' do
+post '/perform_draft/:draft_id' do
   if logged_in?
     # 
-    redirect to '/all_mains'
+    redirect to '/drafts'
   else
     redirect to '/login'
   end
