@@ -1,0 +1,60 @@
+<!-- <div class="page_container"> -->
+  <h1 class="no_page_container">Create New Draft</h1>
+  <div class="cd_left">
+  	<h2>Setup</h2>
+    <form id="draft_setup" action='/create_draft' method ="POST">
+      <input id="name" type="text" placeholder="enter draft name" required><br><br>
+       <label>Number of GM's  <select id="number_of_gms">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select></label><br><br>
+      <label>Number of Rounds  <select id="number_of_rounds">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select></label><br><br>
+      <label>Access  <select id="access">
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+      </select></label><br><br>
+      <label>Type  <select id="type">
+      	<option value="round robin">Round Robin</option>
+        <option value="team">Draft as a Team</option>
+      </select></label><br><br><br>
+        <!-- <p><strong>Round Robin:</strong> GM's make every pick</p>
+        <p><strong>Draft as a Team:</strong> Across mulitple rounds</p>
+        <br> -->
+      <input id="draft_creation" type="submit" value="Step 2 - Details">
+    </form>
+    <% if @error%>
+      <p id="error"><%= @error %></p>
+    <% end %>
+  </div>
+  <div class="cd_middle">
+  	<h2>Details</h2>
+      <%= erb :_choose_teams %>
+  </div>
+  <div class="cd_right">
+  	<h2>Set Draft Order</h2>
+      <ul id="sortable">
+        <% if @first_round_draft_positions %>
+          <% @first_round_draft_positions.each do |dp| %>
+            <li id="dp_data" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= dp.team.name %></li>
+	        <% end %>
+        <% end %>
+	    </ul>
+	</table>
+  </div>
+<!-- </div> -->

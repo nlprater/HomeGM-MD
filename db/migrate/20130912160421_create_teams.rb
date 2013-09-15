@@ -4,7 +4,8 @@ class CreateTeams < ActiveRecord::Migration
   	  t.string :name
   	  t.string :division
   	  t.string :conference
-  	  t.string :location
+  	  t.string :city
+  	  t.string :state
 
   	  t.timestamps
   	end

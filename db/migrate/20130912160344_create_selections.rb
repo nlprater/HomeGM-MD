@@ -11,5 +11,12 @@ class CreateSelections < ActiveRecord::Migration
 
   	  t.timestamps
   	end
+  	add_index :selections, :user_id
+  	add_index :selections, :draft_id
+  	add_index :selections, :round_id
+  	add_index :selections, :team_id
+  	add_index :selections, :player_id
+  	add_index :selections, :draft_position_id
+  	add_index :selections, :overall_position
   end
 end

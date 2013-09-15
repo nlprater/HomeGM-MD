@@ -1,0 +1,48 @@
+<div class="cd_middle_top">
+	<form id="team_selection_form">
+<h3>Choose <%=  %> Teams</h3><input id="team_selection_button" class="team_selection" type="submit" value="Done">   
+</div>
+  <div class="cd_middle_left">
+  	<h4>AFC North</h4>
+      <% @afc_north.each do |team| %>
+  <input id="cb-<%= team.name %>"type="checkbox" class="team_checkbox" value="<%= team.name %>"> <%= team.name %><br>
+      <% end %>
+  <br>
+  <h4>AFC East</h4>
+     <% @afc_east.each do |team| %>
+  <input type="checkbox" class="team_checkbox" value="<%= team.name %>"> <%= team.name %><br>
+      <% end %>
+  <br>
+  <h4>AFC South</h4>
+     <% @afc_south.each do |team| %>
+  <input type="checkbox" class="team_checkbox" value="<%= team.name %>"> <%= team.name %><br>
+      <% end %>
+  <br>
+  <h4>AFC West</h4>
+     <% @afc_west.each do |team| %>
+  <input type="checkbox" class="team_checkbox"  value="<%= team.name %>"> <%= team.name %><br>
+      <% end %>
+  </div>
+  <div class="cd_middle_right">
+  	<h4>NFC North</h4>
+     <% @nfc_north.each do |team| %>
+  <input type="checkbox" class="team_checkbox" value="<%= team.name %>"> <%= team.name %><br>
+      <% end %>
+  <br>
+  <h4>NFC East</h4>
+     <% @nfc_east.each do |team| %>
+  <input type="checkbox" class="team_checkbox" value="<%= team.name %>"> <%= team.name %><br>
+      <% end %>
+  <br>
+  <h4>NFC South</h4>
+     <% @nfc_south.each do |team| %>
+  <input type="checkbox" class="team_checkbox" value="<%= team.name %>"> <%= team.name %><br>
+      <% end %>
+  <br>
+  <h4>NFC West</h4>
+     <% @nfc_west.each do |team| %>
+  <input type="checkbox" class="team_checkbox" value="<%= team.name %>"> <%= team.name %><br>
+      <% end %>
+  </div>
+
+</form>
